@@ -1,0 +1,150 @@
+/* Contenedor principal del header */
+.header {
+  background-color: #e53935;
+  /* Color de fondo */
+  padding: 10px 20px;
+  /* Espaciado */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Distribuir espacio entre logo y navegación */
+}
+
+/* Logo */
+.logo img {
+  height: 50px;
+  /* Tamaño del logo */
+  cursor: pointer;
+}
+
+/* Menú de navegación */
+.navigation {
+  flex-grow: 1;
+  /* Hacer que el menú ocupe el espacio restante */
+}
+
+/* Menú de escritorio */
+.desktop-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  /* Centramos el menú */
+  gap: 20px;
+  /* Espacio entre elementos del menú */
+}
+
+.desktop-menu li a {
+  text-decoration: none;
+  color: white;
+  /* Color del texto del menú */
+  font-weight: bold;
+}
+
+/* Estilo del usuario y carrito */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* Espacio entre avatar y nombre */
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* Bordes redondeados */
+  cursor: pointer;
+}
+
+/* Contenedor del carrito */
+.cart-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+  /* Espacio entre el nombre del usuario y el carrito */
+}
+
+.cart-icon {
+  font-size: 24px;
+  /* Tamaño del ícono del carrito */
+  color: #fff;
+  /* Color blanco */
+}
+
+.cart-count {
+  margin-left: 5px;
+  background-color: #f50057;
+  /* Color de fondo del contador */
+  color: #fff;
+  /* Color del texto */
+  border-radius: 50%;
+  /* Bordes redondeados */
+  padding: 2px 8px;
+  /* Espaciado */
+  font-size: 14px;
+  /* Tamaño del texto */
+  font-weight: bold;
+  /* Negrita */
+}
+
+/* Estilos del menú desplegable de usuario */
+.dropdown ul {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  display: none;
+}
+
+.dropdown ul.open {
+  display: block;
+}
+
+.dropdown li {
+  padding: 8px 12px;
+}
+
+.dropdown li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estilos para el botón de caché */
+.cache-toggle {
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.cache-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.cache-toggle i {
+  font-size: 1.2rem;
+}
+
+.cache-toggle i.uil-database {
+  color: #4CAF50; /* Verde para caché activado */
+}
+
+.cache-toggle i.uil-database-alt {
+  color: #F44336; /* Rojo para caché desactivado */
+}

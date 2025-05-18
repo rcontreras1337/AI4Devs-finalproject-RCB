@@ -1,0 +1,55 @@
+<!-- header.component.html -->
+<header class="header d-flex align-items-center justify-content-between">
+  <div class="logo">
+    <img src="/assets/hypeV4ault.png" alt="Logo" (click)="goToHome()" />
+  </div>
+
+  <nav class="navigation">
+    <!-- Menú de escritorio centrado -->
+    <ul class="menu desktop-menu d-flex justify-content-center">
+      <!-- <li><a routerLink="/">Inicio</a></li>
+      <li><a routerLink="/about">Acerca de</a></li> -->
+      <li class="cursor-pointer"><a (click)="goToContacto()">Contacto</a></li>
+    </ul>
+
+    <!-- Icono de menú móvil
+    <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </div> -->
+
+    <!-- Menú móvil desplegable -->
+    <!-- <ul class="menu mobile-menu" [ngClass]="{'open': mobileMenuOpen}">
+      <li><a routerLink="/">Inicio</a></li>
+      <li><a routerLink="/about">Acerca de</a></li>
+      <li><a routerLink="/contact">Contacto</a></li>
+    </ul> -->
+  </nav>
+
+  <!-- Contenedor del usuario y carrito juntos -->
+  <div class="d-flex align-items-center">
+    <!-- Menú desplegable de usuario -->
+    <div class="user-menu d-flex align-items-center" *ngIf="user">
+      <img [src]="user.avatar" alt="Avatar" class="avatar" (click)="toggleUserMenu()" />
+      <span class="username">{{ user.name }}</span>
+
+      <!-- Menú desplegable de usuario -->
+      <div class="dropdown">
+        <ul [ngClass]="{'open': userMenuOpen}">
+          <li><a routerLink="/account">Mi cuenta</a></li>
+          <li (click)="logout()">Cerrar sesión</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Botón para activar/desactivar caché -->
+    <div class="cache-toggle ml-3" (click)="toggleCacheEnabled()" title="{{ cacheEnabled ? 'Desactivar caché del carrito' : 'Activar caché del carrito' }}">
+      <i class="uil" [ngClass]="cacheEnabled ? 'uil-database' : 'uil-database-alt'"></i>
+    </div>
+
+    <!-- Carrito de Compras alineado al usuario -->
+    <div class="cart-container ml-3" (click)="goToCart()">
+      <i class="uil uil-shopping-cart-alt cart-icon"></i>
+      <span class="cart-count">{{ cartItemCount }}</span>
+    </div>
+  </div>
+</header>

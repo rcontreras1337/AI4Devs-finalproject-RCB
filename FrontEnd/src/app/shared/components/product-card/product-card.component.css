@@ -1,0 +1,29 @@
+/* product-card.component.css */
+.card {
+  border-radius: 8px;
+  border: none;
+  background-color: #f8f9fa;
+}
+
+.img-thumbnail {
+  border: none;
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}

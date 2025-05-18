@@ -1,0 +1,52 @@
+<!-- modal-card-product.component.html -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" id="modalContent">
+      <div class="modal-body p-0">
+        <div class="row g-0">
+          <!-- Columna de imagen -->
+          <div class="col-md-5 bg-white p-4 d-flex justify-content-center align-items-center">
+            <img [src]="product?.urlImagen" alt="Producto" class="img-fluid">
+          </div>
+
+          <!-- Columna de información -->
+          <div class="col-md-7 product-details-dark p-4">
+            <div class="product-info">
+              <h4 id="productModalLabel" class="mb-2">{{ product?.productName }}</h4>
+              <p class="text-muted small mb-2">{{ product?.complementName }}</p>
+              <p class="mb-4 text-light"><strong>{{ product?.color }}</strong></p>
+
+              <!-- Precios -->
+              <div class="mb-4">
+                <h5 id="tachado" class="text-decoration-line-through text-muted mb-2">
+                  {{ product?.price | currency: 'USD': 'symbol': '1.0-0' }}
+                </h5>
+                <h3 class="price-highlight mb-0">
+                  {{ product?.precioHype | currency: 'USD': 'symbol': '1.0-0' }}
+                </h3>
+              </div>
+
+              <!-- Sección de tallas -->
+              <div class="mt-4">
+                <label for="sizeOptions" class="form-label mb-3">Seleccionar talla</label>
+                <div id="sizeOptions" class="size-grid">
+                  <button *ngFor="let item of getAvailableSizes()"
+                          class="btn size-btn"
+                          [class.selected]="selectedSize === item"
+                          (click)="selectSize(item); animateButton($event)">
+                    {{ item.talla }}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botón de cerrar -->
+            <div class="d-flex justify-content-center mt-5">
+              <button type="button" class="btn btn-action" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

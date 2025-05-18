@@ -1,0 +1,62 @@
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.total {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.app-product-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la animación de vuelo */
+.fly-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  /* No interferir con clics del usuario */
+  z-index: 1000;
+}
+
+.fly-image {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 1s ease-out;
+}
+
+/* Estilo del ícono del carrito */
+.cart-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  z-index: 1000;
+}
+.transparent-div {
+  background-color: var(--color-3)!important;
+  /* Negro con 50% de transparencia */
+  color: #fff!important;
+  /* Color de texto blanco */
+  padding: 20px!important;
+  /* Relleno interno para el contenido */
+  border-radius: 10px!important;
+  /* Bordes redondeados opcionales */
+}
+
+#botonFinalizar{
+  background: var(--color-2) !important;
+  color: var(--color-4);
+  margin-left: 10px;
+}
+

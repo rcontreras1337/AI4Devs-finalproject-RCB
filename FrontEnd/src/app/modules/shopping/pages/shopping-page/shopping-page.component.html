@@ -1,0 +1,46 @@
+<!-- shoping-page.component.html -->
+<div class="container my-4">
+  <h2 class="text-center mb-4">🚨 Agrega tus productos Nike 🚨</h2>
+
+  <!-- Input para la URL y botón de agregar -->
+  <div class="input-group mb-3">
+    <input [(ngModel)]="urlInput" type="text" class="form-control" placeholder="Ingresa la URL de Nike" />
+    <button (click)="addProduct(this.urlInput)" class="btn btn-primary">Agregar Producto</button>
+  </div>
+
+
+
+  <!-- Contenedor para la animación de vuelo -->
+  <div class="fly-container" *ngIf="animateFly">
+    <div class="fly-image" [ngStyle]="flyAnimationStyle"></div>
+  </div>
+
+  <div class="modalAdd">
+    <app-modal-card-product [product]="selectedProduct"
+      (productAdded)="onProductAdded($event)"></app-modal-card-product>
+  </div>
+
+  <div class="card-component" *ngFor="let item of cartProductsList; let i = index" class="mb-3">
+    <app-product-card [product]="item" (removeProduct)="removeProduct($event)"
+      (updateQuantity)="updateProductQuantity($event)"></app-product-card>
+  </div>
+      <!-- Resumen del carrito -->
+      <div class="card p-3 mb-4 text-end transparent-div" *ngIf="cartProductsList.length> 0">
+        <h2>Resumen del Pedido</h2>
+        <h4><strong>Sub Total: </strong>
+          <span class=" text-decoration-line-through">{{ cartSummary.totalOriginalPrice | currency:'USD':'symbol':'1.0-0' }}</span>
+        </h4>
+        <h4 *ngIf="cartSummary.shippingCost > 0"><strong>Costo de Envío: </strong>{{ cartSummary.shippingCost |
+          currency:'USD':'symbol':'1.0-0' }}</h4>
+          <h5><strong>Ahorrado: </strong>{{ cartSummary.totalSaved | currency:'USD':'symbol':'1.0-0' }}</h5>
+        <h4><strong>Total Transferencia: </strong>{{ cartSummary.totalAmount | currency:'USD':'symbol':'1.0-0' }}</h4>
+        <h4><strong class="text-danger">Total Crédito(6 cuotas sin interés): </strong>{{ cartSummary.totalAmountCredit | currency:'USD':'symbol':'1.0-0' }}</h4>
+        <h4 *ngIf="cartSummary.shippingCost === 0" class="text-danger"><strong>Envío Gratis</strong></h4>
+        <button (click)="downloadPDF()" class="btn btn-danger" id="">Descargar Cotización 🧪</button>
+      </div>
+</div>
+
+
+<!-- Icono del carrito (destino de la animación) -->
+<div id="cart-icon" class="cart-icon">
+</div>

@@ -1,0 +1,70 @@
+/* product-modal.component.css */
+.modal-content {
+  border-radius: 15px;
+  border: none;
+  overflow: hidden;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.product-info h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.product-info h3 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #007bff;
+  /* Azul primario de Bootstrap */
+}
+
+#sizeOptions .btn {
+  width: 50px;
+  height: 50px;
+  font-size: 16px;
+}
+
+.img-fluid {
+  max-width: 80%;
+  height: auto;
+  border-radius: 8px;
+}
+#modalContent{
+  background-color: var(--color-3);
+}
+#tachado{
+  text-decoration: line-through;
+}
+h3{
+  color: var(--color-2) !important;
+}
+
+
+/* Animación de clic en el botón */
+.btn-outline-secondary.clicked {
+  background-color: #4caf50;
+  /* Cambia el color de fondo al hacer clic */
+  color: #fff;
+  /* Cambia el color del texto */
+  transform: scale(1.1);
+  /* Aumenta el tamaño ligeramente */
+  transition: transform 0.2s, background-color 0.2s;
+  /* Transición suave */
+}
+
+/* Estilo de hover para botones de talla */
+.btn-outline-secondary:hover {
+  background-color: #17a2b8;
+  /* Color azul */
+  color: #fff;
+  /* Texto en blanco */
+}
